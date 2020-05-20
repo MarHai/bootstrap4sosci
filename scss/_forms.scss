@@ -4,10 +4,9 @@
 // Textual form controls
 //
 
-.form-control {
-  display: block;
+.form-control, input, select, textarea {
+  display: inline-block;
   width: 100%;
-  height: $input-height;
   padding: $input-padding-y $input-padding-x;
   font-family: $input-font-family;
   @include font-size($input-font-size);
@@ -82,7 +81,8 @@ select.form-control {
 
 // Make file inputs better match text inputs by forcing them to new lines.
 .form-control-file,
-.form-control-range {
+.form-control-range,
+input[type="range"] {
   display: block;
   width: 100%;
 }
@@ -166,7 +166,7 @@ select.form-control {
 }
 
 // stylelint-disable-next-line no-duplicate-selectors
-select.form-control {
+select.form-control, select {
   &[size],
   &[multiple] {
     height: auto;
@@ -214,10 +214,11 @@ textarea.form-control {
 //
 // Indent the labels to position radios/checkboxes as hanging controls.
 
-.form-check {
+.form-check, input[type="check"], input[type="checkbox"], :not(.inputCSH) > input[type="radio"] {
   position: relative;
   display: block;
   padding-left: $form-check-input-gutter;
+  width: auto;
 }
 
 .form-check-input {

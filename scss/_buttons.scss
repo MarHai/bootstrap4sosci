@@ -4,7 +4,7 @@
 // Base styles
 //
 
-.btn {
+.btn, button, .button, input[type="submit"] {
   display: inline-block;
   font-family: $btn-font-family;
   font-weight: $btn-font-weight;

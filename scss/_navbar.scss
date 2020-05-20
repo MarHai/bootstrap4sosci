@@ -32,7 +32,7 @@
     justify-content: space-between;
   }
 
-  .container,
+  div.container,
   .container-fluid {
     @extend %container-flex-properties;
   }
@@ -154,7 +154,7 @@
           padding-left: 0;
         }
 
-        > .container,
+        > div.container,
         > .container-fluid {
           @extend %container-navbar-expand-#{$breakpoint};
         }
@@ -188,7 +188,7 @@
           flex-wrap: nowrap;
         }
 
-        > .container,
+        > div.container,
         > .container-fluid {
           @extend %container-nesting-#{$breakpoint};
         }

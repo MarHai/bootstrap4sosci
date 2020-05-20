@@ -1,0 +1,112 @@
+// base
+html {
+  font-size: 16px;
+}
+
+
+// progress bar on top
+div.progressbar {
+  height: 20px;
+  border: 1px solid $gray-600!important;
+}
+
+
+// dropout option column for table
+table tbody td.dont_know {
+  border-left: 1px solid $gray-300;
+}
+
+
+// label sizing for maximum click area
+:not(.s2flex) > label {
+  width: 100%;
+  display: inline;
+}
+
+
+// special formatting for multi-radio items
+.inputCSH {
+  padding-top: .75rem;
+
+  & > input[type="radio"] {
+    width: auto;
+  }
+}
+  
+table th.container, table td.container {
+  & > img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    left: auto!important;
+  }
+}
+
+
+// yellow info boxes
+.info.spacing {
+  position: relative;
+  padding: $alert-padding-y $alert-padding-x;
+  margin-bottom: $alert-margin-bottom;
+  border: $alert-border-width solid transparent;
+  @include border-radius($alert-border-radius);
+  
+  $color: "warning";
+  @include alert-variant(theme-color-level($color, $alert-bg-level), theme-color-level($color, $alert-border-level), theme-color-level($color, $alert-color-level));
+  
+  div {
+    color: $body-color!important;
+    background-color: transparent!important;
+    border-color: transparent!important;
+    padding: 0;
+  }
+}
+
+
+// red info boxes
+.feedback {
+  position: relative;
+  padding: $alert-padding-y $alert-padding-x;
+  margin-bottom: $alert-margin-bottom;
+  border: $alert-border-width solid transparent;
+  @include border-radius($alert-border-radius);
+  
+  $color: "warning";
+  @include alert-variant(theme-color-level($color, $alert-bg-level), theme-color-level($color, $alert-border-level), theme-color-level($color, $alert-color-level));
+  
+  p {
+    margin: 0;
+  }
+}
+
+
+// generally buttons
+button, input.button, input[type="submit"] {
+  @include button-outline-variant($secondary);
+  width: auto;
+}
+
+
+// prev/next buttons
+.buttonNext button, .buttonNext input.button, .buttonNext input[type="submit"],
+.buttonBack button, .buttonBack input.button, .buttonBack input[type="submit"] {
+  @include button-outline-variant($primary);
+  width: auto;
+}
+
+
+// abort buttons
+.buttonControl {
+  padding-top: .5rem!important;
+  margin-top: 3rem!important;
+  text-align: center!important;
+  
+  button, input.button, input[type="submit"] {
+	@include button-outline-variant($secondary);
+	
+    padding: .25rem .5rem;
+    font-size: .875rem;
+	width: auto;
+  }
+}
+

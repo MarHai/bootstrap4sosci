@@ -10,7 +10,7 @@
     "responsive",
     "front-end",
     "framework",
-    "web"
+    "sosci survey"
   ],
   "homepage": "https://getbootstrap.com/",
   "author": "The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors) and Mario Haim (https://haim.it)",
@@ -20,18 +20,18 @@
   ],
   "scripts": {
     "css": "npm-run-all css-compile css-prefix css-minify",
-    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/ -o dist/css/",
-    "css-minify": "cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap.min.css dist/css/bootstrap.css && cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap-grid.min.css dist/css/bootstrap-grid.css && cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap-reboot.min.css dist/css/bootstrap-reboot.css",
-    "css-prefix": "postcss --config postcss.config.js --replace \"dist/css/*.css\" \"!dist/css/*.min.css\""
+    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/ -o dist/",
+    "css-prefix": "postcss --config postcss.config.js --replace \"dist/*.css\" \"!dist/*.min.css\"",
+    "css-minify": "cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/bootstrap4sosci.min.css dist/bootstrap4sosci.css"
   },
-  "style": "dist/css/bootstrap.css",
-  "sass": "scss/bootstrap.scss",
+  "style": "dist/bootstrap4sosci.css",
+  "sass": "scss/bootstrap4sosci.scss",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/twbs/bootstrap.git"
+    "url": "git+https://github.com/MarHai/bootstrap4sosci.git"
   },
   "bugs": {
-    "url": "https://github.com/twbs/bootstrap/issues"
+    "url": "https://github.com/MarHai/bootstrap4sosci/issues"
   },
   "license": "MIT",
   "funding": {
@@ -50,28 +50,7 @@
     "find-unused-sass-variables": "^2.0.0"
   },
   "files": [
-    "dist/{css,js}/*.{css,js,map}",
+    "dist/*.{css,map}",
     "scss/**/*.scss"
-  ],
-  "jspm": {
-    "registry": "npm",
-    "main": "js/bootstrap",
-    "directories": {
-      "lib": "dist"
-    },
-    "shim": {
-      "js/bootstrap": {
-        "deps": [
-          "jquery",
-          "popper.js"
-        ],
-        "exports": "$"
-      }
-    },
-    "dependencies": {},
-    "peerDependencies": {
-      "jquery": "1.9.1 - 3",
-      "popper.js": "^1.16.0"
-    }
-  }
+  ]
 }
