@@ -1,0 +1,77 @@
+{
+  "name": "bootstrap4sosci",
+  "description": "The most popular front-end framework for developing responsive, mobile first projects on the web. Adapted to SoSci Survey.",
+  "version": "4.5.0",
+  "version_short": "4.5",
+  "keywords": [
+    "css",
+    "sass",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web"
+  ],
+  "homepage": "https://getbootstrap.com/",
+  "author": "The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors) and Mario Haim (https://haim.it)",
+  "contributors": [
+    "Twitter, Inc.",
+    "U Leipzig"
+  ],
+  "scripts": {
+    "css": "npm-run-all css-compile css-prefix css-minify",
+    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/ -o dist/css/",
+    "css-minify": "cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap.min.css dist/css/bootstrap.css && cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap-grid.min.css dist/css/bootstrap-grid.css && cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap-reboot.min.css dist/css/bootstrap-reboot.css",
+    "css-prefix": "postcss --config postcss.config.js --replace \"dist/css/*.css\" \"!dist/css/*.min.css\""
+  },
+  "style": "dist/css/bootstrap.css",
+  "sass": "scss/bootstrap.scss",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twbs/bootstrap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/twbs/bootstrap/issues"
+  },
+  "license": "MIT",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/bootstrap"
+  },
+  "dependencies": {},
+  "peerDependencies": {},
+  "devDependencies": {
+    "clean-css-cli": "^4.3.0",
+    "node-sass": "^4.14.1",
+    "postcss-cli": "^7.1.1",
+    "autoprefixer": "^9.7.6",
+    "npm-run-all": "^4.1.5",
+    "cross-env": "^7.0.2",
+    "find-unused-sass-variables": "^2.0.0"
+  },
+  "files": [
+    "dist/{css,js}/*.{css,js,map}",
+    "scss/**/*.scss"
+  ],
+  "jspm": {
+    "registry": "npm",
+    "main": "js/bootstrap",
+    "directories": {
+      "lib": "dist"
+    },
+    "shim": {
+      "js/bootstrap": {
+        "deps": [
+          "jquery",
+          "popper.js"
+        ],
+        "exports": "$"
+      }
+    },
+    "dependencies": {},
+    "peerDependencies": {
+      "jquery": "1.9.1 - 3",
+      "popper.js": "^1.16.0"
+    }
+  }
+}
